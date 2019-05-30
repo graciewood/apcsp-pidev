@@ -3,8 +3,8 @@
 
 struct Student 
 {
-  char firstName[50];
-  char lastName[50];
+  char firstName[256];
+  char lastName[256];
   int age;
   int studentID;
 };
@@ -19,25 +19,25 @@ void printStudent(struct Student* student)
 int main() 
 {
   int numStudent;
-  char input[50];
+  char input[256];
   printf("Desired number of students to be entered: \n");
-  fgets(input, 50, stdin);
+  fgets(input, 256, stdin);
   sscanf(input, "%d", &numStudent);
   struct Student student[numStudent];
   for (int i = 0; i < numStudent; i++)
   {
     printf("You are entering student number: %d\n", i);
     printf("First Name: ");
-    fgets(input, 50, stdin);
+    fgets(input, 256, stdin);
     sscanf(input, "%s", student[i].firstName);
     printf("Last Name: ");
-    fgets(input, 50, stdin);
+    fgets(input, 256, stdin);
     sscanf(input, "%s", student[i].lastName);
     printf("Age: ");
-    fgets(input, 50, stdin);
+    fgets(input, 256, stdin);
     sscanf(input, "%d", &student[i].age);
     printf("Student ID: ");
-    fgets(input, 50, stdin);
+    fgets(input, 256, stdin);
     sscanf(input, "%d", &student[i].studentID);
   }
 
